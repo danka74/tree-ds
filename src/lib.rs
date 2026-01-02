@@ -209,6 +209,7 @@ pub mod prelude {
     pub use crate::{
         node::{Node, Nodes},
         tree::{NodeRemovalStrategy, SubTree, TraversalStrategy, Tree},
+        error::Error
     };
 
     /// Defines the default type for the node id.
