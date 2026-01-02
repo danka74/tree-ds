@@ -59,6 +59,18 @@ impl From<FmtError> for Error {
     }
 }
 
+impl From<&str> for Error {
+    fn from(s: &str) -> Self {
+        Error::InvalidOperation(s.to_string())
+    }
+}
+
+impl From<std::io::Error> for Error {
+    fn from(err: std::io::Error) -> Self {
+        Error::InvalidOperation(err.to_string())
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
